@@ -12,8 +12,7 @@ public class VacationPackageBuilder {
 		this.result = new VacationPackage();
 	}
 	
-	// TODO: Setters
-	// TODO: Checkers
+	// TODO: Setters with Pre-Validation
 	
 	public VacationPackage getResult() {
 		return this.result;

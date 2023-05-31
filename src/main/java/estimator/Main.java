@@ -12,6 +12,9 @@ public class Main {
 		
 		VacationPackage vacationPackage = builder.getResult();
 		
+		VacationPackageCostCalculator calculator = new VacationPackageCostCalculator(vacationPackage);
+		calculator.calculateCost();
+		
 		System.out.printf("The total cost is: %d", vacationPackage.getCost());
 	}
 
