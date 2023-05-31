@@ -18,8 +18,7 @@ public class Main {
 		System.out.println("Number of travelers:\n");
 		while(!builder.setNumberOfTravelers(Main.scanner.nextLine()));
 		
-		//System.out.println("Duration (days):\n");
-		//while(!builder.setDurationInDays(Main.scanner.nextLine()));
+		System.out.println("Duration (days):\n");
 		
 		VacationPackage vacationPackage = builder.getResult();
 		

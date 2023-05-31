@@ -10,6 +10,7 @@ public class VacationPackageCostCalculator {
 	
 	public void calculateCost() {
 		calculateWithDestination();
+		calculateWithNumberOfDays();
 		calculateWithNumberOfTravelers();
 		// TODO: call private methods
 		
@@ -37,6 +38,19 @@ public class VacationPackageCostCalculator {
 		
 		if (this.vacationPackage.getNumberOfTravelers() >= 10) {
 			this.vacationPackage.setCost((int) Math.round(cost*0.8));
+		}
+	}
+	
+	private void calculateWithNumberOfDays() {
+		int cost = this.vacationPackage.getCost();
+		
+		if(this.vacationPackage.getDurationInDays() < 7) {
+			this.vacationPackage.setCost(cost += 200);
+		}
+		
+		if(this.vacationPackage.getDurationInDays() >= 30 &&
+			this.vacationPackage.getNumberOfTravelers() == 2) {
+			this.vacationPackage.setCost(cost -= 200);
 		}
 	}
 	

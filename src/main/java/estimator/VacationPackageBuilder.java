@@ -46,6 +46,20 @@ public class VacationPackageBuilder {
 		return matchFound;
 	}
 	
+	public boolean setDurationInDays(String numberOfDays) {
+		Pattern pattern = Pattern.compile("^[0-9]+$");
+		Matcher matcher = pattern.matcher(numberOfDays);
+		boolean matchFound = matcher.find();
+		
+		if (!matchFound) {
+			System.out.println("Número de días inválido");
+		}else {
+			this.result.setDurationInDays(Integer.valueOf(numberOfDays));
+		}
+		
+		return matchFound;
+	}
+	
 	public VacationPackage getResult() {
 		return this.result;
 	}
