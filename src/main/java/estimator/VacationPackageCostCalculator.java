@@ -10,6 +10,7 @@ public class VacationPackageCostCalculator {
 	
 	public void calculateCost() {
 		calculateWithDestination();
+		calculateWithNumberOfTravelers();
 		// TODO: call private methods
 		
 	}
@@ -23,6 +24,19 @@ public class VacationPackageCostCalculator {
 		}
 		else if (this.vacationPackage.getDestination().equals("New York")) {
 			this.vacationPackage.setCost(cost += 600);
+		}
+	}
+	
+	private void calculateWithNumberOfTravelers() {
+		int cost = this.vacationPackage.getCost();
+		
+		if (this.vacationPackage.getNumberOfTravelers() >= 4 && 
+			this.vacationPackage.getNumberOfTravelers() < 10) {
+			this.vacationPackage.setCost((int) Math.round(cost*0.9));
+		}
+		
+		if (this.vacationPackage.getNumberOfTravelers() >= 10) {
+			this.vacationPackage.setCost((int) Math.round(cost*0.8));
 		}
 	}
 	
