@@ -10,15 +10,21 @@ public class Main {
 		
 		VacationPackageBuilder builder = new VacationPackageBuilder();
 		
-		System.out.println("Welcome to the E7 Vacation Package Cost Estimator\n");
+		System.out.println("\nWelcome to the E7 Vacation Package Cost Estimator");
 		
-		System.out.println("Destination:\n");
+		do {
+			System.out.print("\nDestination: ");
+		}
 		while(!builder.setDestination(Main.scanner.nextLine()));
 		
-		System.out.println("Number of travelers:\n");
+		do {
+			System.out.print("\nNumber of travelers: ");
+		}
 		while(!builder.setNumberOfTravelers(Main.scanner.nextLine()));
 		
-		System.out.println("Duration (days):\n");
+		do {
+			System.out.print("\nDuration (days): ");
+		}
 		while(!builder.setDurationInDays(Main.scanner.nextLine()));
 		
 		VacationPackage vacationPackage = builder.getResult();
@@ -26,7 +32,7 @@ public class Main {
 		VacationPackageCostCalculator calculator = new VacationPackageCostCalculator(vacationPackage);
 		calculator.calculateCost();
 		
-		System.out.printf("The total cost is: %d", vacationPackage.getCost());
+		System.out.printf("\nThe total cost is: $ %d.00", vacationPackage.getCost());
 	}
 
 }

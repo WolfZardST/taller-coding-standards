@@ -14,14 +14,18 @@ public class VacationPackageBuilder {
 		this.result = new VacationPackage();
 	}
 	
-	// TODO: Setters with Pre-Validation
+	private boolean regexMatch(String regex, String target) {
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(target);
+		return matcher.find();
+	}
+	
 	public boolean setDestination(String destination) {
-		Pattern pattern = Pattern.compile("[a-zA-Z]");
-		Matcher matcher = pattern.matcher(destination);
-		boolean matchFound = matcher.find();
+		
+		boolean matchFound = regexMatch("^[a-zA-Z ]+$", destination);
 		
 		if (!matchFound) {
-			System.out.println("Destino inválido");
+			System.out.println("Invalid Destination");
 		}else {
 			this.result.setDestination(destination);
 		}		
@@ -30,15 +34,14 @@ public class VacationPackageBuilder {
 	}
 	
 	public boolean setNumberOfTravelers(String numberOfTravelers) {
-		Pattern pattern = Pattern.compile("^[0-9]+$");
-		Matcher matcher = pattern.matcher(numberOfTravelers);
-		boolean matchFound = matcher.find();
+		
+		boolean matchFound = regexMatch("^[0-9]+$", numberOfTravelers);
 		
 		if (!matchFound) {
 			System.out.println("Número de viajeros inválido");
 		}else if (Integer.valueOf(numberOfTravelers) >= 80){
 			matchFound = false;
-			System.out.println("Paquetes de viaje no disponibles para la cantidad de viajeros solicitada");
+			System.out.println("There is no Vacation Package available for the specified Number of Travelers");
 		}else {
 			this.result.setNumberOfTravelers(Integer.valueOf(numberOfTravelers));
 		}
@@ -47,12 +50,11 @@ public class VacationPackageBuilder {
 	}
 	
 	public boolean setDurationInDays(String numberOfDays) {
-		Pattern pattern = Pattern.compile("^[0-9]+$");
-		Matcher matcher = pattern.matcher(numberOfDays);
-		boolean matchFound = matcher.find();
+		
+		boolean matchFound = regexMatch("^[0-9]+$", numberOfDays);
 		
 		if (!matchFound) {
-			System.out.println("Número de días inválido");
+			System.out.println("Invalid Number of Days");
 		}else {
 			this.result.setDurationInDays(Integer.valueOf(numberOfDays));
 		}

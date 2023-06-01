@@ -12,18 +12,16 @@ public class VacationPackageCostCalculator {
 		calculateWithDestination();
 		calculateWithNumberOfDays();
 		calculateWithNumberOfTravelers();
-		// TODO: call private methods
 		
 	}
 	
-	// TODO: Private Condition Methods for Cost Calculation
 	private void calculateWithDestination() {
 		int cost = this.vacationPackage.getCost();
 		
-		if (this.vacationPackage.getDestination().equals("Paris")) {
+		if (this.vacationPackage.getDestination().trim().toLowerCase().equals("paris")) {
 			this.vacationPackage.setCost(cost += 500);
 		}
-		else if (this.vacationPackage.getDestination().equals("New York")) {
+		else if (this.vacationPackage.getDestination().trim().toLowerCase().equals("new york")) {
 			this.vacationPackage.setCost(cost += 600);
 		}
 	}
@@ -36,7 +34,7 @@ public class VacationPackageCostCalculator {
 			this.vacationPackage.setCost((int) Math.round(cost*0.9));
 		}
 		
-		if (this.vacationPackage.getNumberOfTravelers() >= 10) {
+		if (this.vacationPackage.getNumberOfTravelers() > 10) {
 			this.vacationPackage.setCost((int) Math.round(cost*0.8));
 		}
 	}
