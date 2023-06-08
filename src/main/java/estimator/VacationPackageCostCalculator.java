@@ -2,7 +2,7 @@ package estimator;
 
 public class VacationPackageCostCalculator {
 	
-    private VacationPackage vacationPackage; 
+    private final VacationPackage vacationPackage; 
     /**
 	 * Only constructor for the VacationPackageCostCalculator object.
 	 */
