@@ -95,6 +95,19 @@ public class VacationPackageBuilder {
 	
     	return matchFound;
     }
+    
+    public boolean setAddOn(final String option) {
+    	
+    	boolean matchFound = regexMatch("^[0-3]$", option);
+
+    	if (!matchFound) {
+            System.out.println("Invalid Option");
+    	}else {
+            this.result.setAddOn(AddsOns.getAddonByKey(Integer.valueOf(option)));
+    	}
+	
+    	return matchFound;
+    }
 
     /**
      * Returns the VacationPackage instance of the builder.

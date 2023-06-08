@@ -14,9 +14,11 @@ public class VacationPackageCostCalculator {
      * calculate the total cost of the package
      */
     public void calculateCost() {
+    	System.out.println(vacationPackage.getAddOn().getValue());
         calculateWithDestination();
         calculateWithNumberOfDays();
         calculateWithNumberOfTravelers();
+        calculateWithAddOn();
 		
     }
 	
@@ -55,6 +57,14 @@ public class VacationPackageCostCalculator {
 			this.vacationPackage.getNumberOfTravelers() == 2) {
             this.vacationPackage.setCost(cost -= 200);
         }
+    }
+    
+    private void calculateWithAddOn() {
+        int cost = this.vacationPackage.getCost();
+        int numberOfTravelers = this.vacationPackage.getNumberOfTravelers();
+        cost += this.vacationPackage.getAddOn().getValue() * numberOfTravelers;
+        this.vacationPackage.setCost(cost);
+		
     }
 	
 }

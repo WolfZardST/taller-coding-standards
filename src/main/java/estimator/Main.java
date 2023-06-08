@@ -26,6 +26,11 @@ public class Main {
 	    System.out.print("\nDuration (days): ");
 	}
 	while(!builder.setDurationInDays(Main.scanner.nextLine()));
+	do {
+		System.out.print("\nChoose an optional add on (Number of the add on): ");
+		AddsOns.showAllAddons();
+	}
+	while(!builder.setAddOn(Main.scanner.nextLine()));
 	
 	VacationPackage vacationPackage = builder.getResult();
 	

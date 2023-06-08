@@ -6,12 +6,14 @@ public class VacationPackage {
     private String destination;
     private int numberOfTravelers;
     private int durationInDays;
+    private AddsOns addOn;
 
     /**
      * Only constructor for the VacationPackage object.
      */
     public VacationPackage() {
         this.cost = 1000;
+        this.addOn = AddsOns.NO_ADDS_ON;
     }
 
     /**
@@ -85,5 +87,13 @@ public class VacationPackage {
     public void setDurationInDays(final int durationInDays) {
         this.durationInDays = durationInDays;
     }
+
+	public AddsOns getAddOn() {
+		return addOn;
+	}
+
+	public void setAddOn(AddsOns addOn) {
+		this.addOn = addOn;
+	}
 
 }
