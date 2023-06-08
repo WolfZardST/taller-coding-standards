@@ -89,7 +89,7 @@ public class VacationPackage {
     }
 
 	public AddsOns getAddOn() {
-		return addOn;
+		return addOn; 
 	}
 
 	public void setAddOn(AddsOns addOn) {
