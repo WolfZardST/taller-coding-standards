@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Main {
 	
+	private Main() {
+	// Constructor
+	}
+	
     private static Scanner scanner = new Scanner(System.in);
 //CHECKSTYLE:OFF
 	public static void main(String[] args) {
